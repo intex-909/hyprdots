@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "KKV9/compress", rev = "60b24af" }]
+
+[flavor]
+deps = [{ use = "yazi-rs/flavors:catppuccin-macchiato", rev = "fc8eeaa" }, { use = "bennyyip/gruvbox-dark", rev = "b4cc9f2" }]
