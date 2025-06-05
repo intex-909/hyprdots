@@ -19,7 +19,7 @@ keymap.set("n", "g#", "g#zz", opts)
 keymap.set("n", "<C-e>", "4<C-e>", opts)
 keymap.set("n", "<C-y>", "4<C-y>", opts)
 
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<leader>nn", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Normal --
 -- Window management
