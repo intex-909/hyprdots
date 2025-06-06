@@ -1,0 +1,7 @@
+zsh/.config/zsh/plugins/
+zsh/.config/zsh/.zcompdump
+fish/.config/fish/fish_plugins
+fish/.config/fish/fish_variables
+fish/.config/fish/completions/
+fish/.config/fish/functions/
+fish/.config/fish/conf.d/_tide*
