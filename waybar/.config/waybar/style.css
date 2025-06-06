@@ -12,6 +12,7 @@
 window#waybar {
   background-color: @base;
   color: @text;
+  border-radius: 8px;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -58,6 +59,7 @@ window#waybar.hidden {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#battery,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -84,6 +86,10 @@ window#waybar.hidden {
 #custom-power {
   margin-right: 6px;
   padding-right: 16px;
+  background-color: @green;
+}
+
+#battery {
   background-color: @green;
 }
 

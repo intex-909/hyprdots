@@ -14,6 +14,8 @@
     "modules-right": [
         // "mpd",
         "tray",
+        // "battery",
+        // "battery#BAT2",
         "pulseaudio",
         // "network",
         // "power-profiles-daemon",
@@ -33,9 +35,10 @@
         "warp-on-scroll": false,
         "format": "{name}: {icon}",
         "format-icons": {
-            "urgent": "",
+            // "urgent": "",
             // "active": "",
-            "default": ""
+            // "default": ""
+            "default": ""
         }
     },
     "mpd": {
@@ -78,6 +81,23 @@
     },
     "memory": {
         "format": "{}% "
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        },
+        "format-full": "Charged ",
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
