@@ -38,7 +38,9 @@
             // "urgent": "",
             // "active": "",
             // "default": ""
-            "default": ""
+            // "default": ""
+            "active": "",
+            "default": ""
         }
     },
     "mpd": {
