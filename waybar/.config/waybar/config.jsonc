@@ -10,8 +10,8 @@
   ],
   "modules-center": [
     "hyprland/window"
-    ],
-    "modules-right": [
+  ],
+  "modules-right": [
         // "mpd",
         "tray",
         // "battery",
@@ -24,103 +24,103 @@
         // "memory",
         "clock",
         "custom/power"
-    ],
-    "custom/logo": {
-      "format": "  ",
-      "tooltip": false,
-      "on-click": "rofi -show drun"
-    },
-    "hyprland/workspaces": {
-      "disable-scroll": true,
-      "all-outputs": true,
-      "warp-on-scroll": false,
-      "format": "{name}: {icon}",
-      "format-icons": {
+  ],
+  "custom/logo": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "rofi -show drun"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}: {icon}",
+    "format-icons": {
             // "urgent": "",
             // "active": "",
             // "default": ""
             // "default": ""
             "active": "",
             "default": ""
-      }
+    }
+  },
+  "upower": {
+    "native-path": "hidpp_battery_0",
+    "format": "󰍽 {percentage}",
+    "hide-if-empty": true,
+    "tooltip": true,
+    "show-icon": false
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "unknown-tag": "N/A",
+    "interval": 5,
+    "consume-icons": {
+      "on": " "
     },
-    "upower": {
-      "native-path": "hidpp_battery_0",
-      "format": "󰍽 {percentage}",
-      "hide-if-empty": true,
-      "tooltip": true,
-      "show-icon": false
+    "random-icons": {
+      "off": "<span color=\"#f53c3c\"></span> ",
+      "on": " "
     },
-    "mpd": {
-      "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-      "format-disconnected": "Disconnected ",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-      "unknown-tag": "N/A",
-      "interval": 5,
-      "consume-icons": {
-        "on": " "
-      },
-      "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ",
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)"
+    "repeat-icons": {
+      "on": " "
     },
-    "tray": {
-      "icon-size": 20,
-      "spacing": 10
+    "single-icons": {
+      "on": "1 "
     },
-    "clock": {
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "format-alt": "{:%Y-%m-%d}"
+    "state-icons": {
+      "paused": "",
+      "playing": ""
     },
-    "cpu": {
-      "format": "{usage}% ",
-      "tooltip": false
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-    "memory": {
-      "format": "{}% "
+    "format-full": "Charged ",
+    "interval": 5,
+    "states": {
+      "warning": 20,
+      "critical": 10
     },
-    "battery": {
-      "format": "{capacity}% {icon}",
-      "format-icons": {
-        "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
-        "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-      },
-      "format-full": "Charged ",
-      "interval": 5,
-      "states": {
-        "warning": 20,
-        "critical": 10
-      },
-      "tooltip": false
-    },
-    "battery#bat2": {
-      "bat": "BAT2"
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "network": {
+    "tooltip": false
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
@@ -128,8 +128,8 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
+  },
+  "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
         "format-muted": "",
@@ -137,11 +137,11 @@
           "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
-    },
-    "custom/power": {
-      "format" : "⏻",
+  },
+  "custom/power": {
+    "format" : "⏻",
         // "format": "󰤆",
         "tooltip": false,
         "on-click": "wlogout"
-    }
+  }
 }
