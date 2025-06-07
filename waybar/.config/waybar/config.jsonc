@@ -18,9 +18,9 @@
         // "battery",
         // "battery#BAT2",
         "upower",
+        "power-profiles-daemon",
         "pulseaudio",
         // "network",
-        // "power-profiles-daemon",
         // "cpu",
         // "memory",
         "custom/power"
@@ -114,10 +114,14 @@
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      // "default": "",
+      // "performance": "",
+      // "balanced": "",
+      // "power-saver": ""
+      "default": "󰓅",
+      "performance": "󰓅",
+      "balanced": "󰾅",
+      "power-saver": "󰾆"
     }
   },
   "network": {
