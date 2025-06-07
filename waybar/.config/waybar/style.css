@@ -65,6 +65,7 @@ window#waybar.hidden {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#upower,
 #mpd,
 #custom-power {
   border-radius: 4px;
@@ -101,6 +102,10 @@ window#waybar.hidden {
 #power-profiles-daemon {
   color: @green;
   padding-right: 15px;
+}
+
+#upower {
+  background-color: @mauve;
 }
 
 #power-profiles-daemon.performance {
