@@ -5,6 +5,7 @@ count=$(hyprctl clients -j | jq 'length')
 if [ $count -gt 0 ]; then
   hyprctl dispatch killactive
 else
-  dm-logout -r
+  # dm-logout -r
+  wlogout
 fi
 
