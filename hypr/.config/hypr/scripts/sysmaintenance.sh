@@ -47,4 +47,18 @@ echo "CLEARING SYSTEM LOGS"
 echo "----------------------------------------------------"
 
 sudo journalctl --vacuum-time=7d
+
 echo ""
+echo "----------------------------------------------------"
+echo "UPDATE FLATPAKS"
+echo "----------------------------------------------------"
+flatpak update -y
+
+echo ""
+echo "----------------------------------------------------"
+echo "UNINSTALL UNUSED FLATPAKS"
+echo "----------------------------------------------------"
+flatpak uninstall --unused
+
+echo ""
+
