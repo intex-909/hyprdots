@@ -113,6 +113,10 @@ window#waybar.hidden {
   background-color: @mauve;
 }
 
+#upower.charging {
+  background-color: @teal;
+}
+
 #power-profiles-daemon.performance {
   /* color: @green; */
 }
