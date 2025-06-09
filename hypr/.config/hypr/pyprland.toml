@@ -1,0 +1,31 @@
+[pyprland]
+plugins = ["scratchpads", "expose"]
+
+[scratchpads.term]
+animation = "fromTop"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+lazy = true
+position = "25% 44px"
+# size = "75% 60%"
+size = "50% 50%"
+margin = 44
+unfocus = "hide"
+
+[scratchpads.volume]
+animation = "fromRight"
+command = "pavucontrol"
+class = "org.pulseaudio.pavucontrol"
+lazy = true
+size = "40% 90%"
+unfocus = "hide"
+
+[scratchpads.chrome]
+animation = "fromLeft"
+command = "chromium"
+class = "Chromium"
+lazy = true
+size = "50% 90%"
+
+[expose]
+include_special = false
