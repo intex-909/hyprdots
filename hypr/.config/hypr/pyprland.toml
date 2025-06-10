@@ -1,15 +1,24 @@
 [pyprland]
 plugins = ["scratchpads", "expose"]
 
-[scratchpads.term]
+[scratchpads.up-term]
 animation = "fromTop"
-command = "kitty --class kitty-dropterm"
-class = "kitty-dropterm"
+command = "kitty --class kitty-dropterm-top"
+class = "kitty-dropterm-top"
 lazy = true
 position = "25% 44px"
 # size = "75% 60%"
 size = "50% 50%"
 margin = 44
+unfocus = "hide"
+
+[scratchpads.drop-term]
+animation = "fromBottom"
+command = "kitty --class kitty-dropterm"
+class = "kitty-dropterm"
+lazy = true
+position = "25% 48%"
+size = "50% 50%"
 unfocus = "hide"
 
 [scratchpads.volume]
