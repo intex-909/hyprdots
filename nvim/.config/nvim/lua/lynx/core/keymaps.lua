@@ -16,10 +16,13 @@ keymap.set("n", "#", "#zz", opts)
 keymap.set("n", "g*", "g*zz", opts)
 keymap.set("n", "g#", "g#zz", opts)
 
-keymap.set("n", "<C-e>", "4<C-e>", opts)
-keymap.set("n", "<C-y>", "4<C-y>", opts)
+-- keymap.set("n", "<C-e>", "4<C-e>", opts)
+-- keymap.set("n", "<C-y>", "4<C-y>", opts)
 
-keymap.set("n", "<leader>nn", ":nohl<CR>", { desc = "Clear search highlights" })
+keymap.set("n", "<A-j>", "4<C-e>", opts)
+keymap.set("n", "<A-k>", "4<C-y>", opts)
+
+keymap.set("n", "<leader>n", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- Normal --
 -- Window management
@@ -60,8 +63,8 @@ keymap.set("n", "<leader>bb", ":b#<CR>", { desc = "Last buffer visited" })
 keymap.set("n", "<leader>bl", "<cmd>Telescope buffers<CR>", { desc = "Show all buffers" })
 
 -- Move text up and down
-keymap.set("n", "<A-j>", ":m+<CR>==", opts)
-keymap.set("n", "<A-k>", ":m-2<CR>==", opts)
+-- keymap.set("n", "<A-j>", ":m+<CR>==", opts)
+-- keymap.set("n", "<A-k>", ":m-2<CR>==", opts)
 
 -- Visual --
 -- Stay in indent mode
