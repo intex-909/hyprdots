@@ -1,129 +1,43 @@
-@import "catppuccin-macchiato"
-
-* {
-    font: "Noto Sans 13";
-    g-spacing: 10px;
-    g-margin: 0;
-    b-color: #000000FF;
-    // fg-color: #FFFFFFFF;
-    fg-color: @text;
-    // fgp-color: #888888FF;
-    fgp-color: @overlay1;
-    b-radius: 8px;
-    g-padding: 8px;
-    // hl-color: #FFFFFFFF;
-    hl-color: @text;
-    // hlt-color: #000000FF;
-    hlt-color: @crust;
-    // alt-color: #111111FF;
-    alt-color: @mantle;
-    // wbg-color: #000000CC;
-    wbg-color: #24273AEA; //@base;
-    w-border: 2px solid;
-    // w-border-color: #FFFFFFFF;
-    w-border-color: @blue;
-    w-padding: 12px;
-}
-
-// * {
-//     font: "Noto Sans 13";
-//     g-spacing: 10px;
-//     g-margin: 0;
-//     b-color: @base;
-//     fg-color: @text;
-//     fgp-color: @overlay0;
-//     b-radius: 8px;
-//     g-padding: 8px;
-//     // hl-color: @lavender;
-//     hl-color: #FFFFFFFF;
-//     hlt-color: @crust;
-//     alt-color: @mantle;
-//     wbg-color: @base;
-//     w-border: 2px solid;
-//     w-border-color: @sapphire;
-//     w-padding: 12px;
-// }
+@theme "catppuccin-default"
 
 configuration {
-    modi: "drun";
-    show-icons: true;
-    display-drun: " ";
+	// font: "SauceCodePro Nerd Font 13";
+	font: "Noto Sans 13";
+  show-icons: true;
+  display-drun: " ";
 }
 
 listview {
-    columns: 1;
-    lines: 7;
-    fixed-height: true;
-    fixed-columns: true;
-    cycle: false;
-    scrollbar: false;
-    border: 0px solid;
+  lines: 8;
+  scrollbar: false;
+  border: 0px solid;
 }
 
 window {
-    transparency: "real";
-    width: 450px;
-    border-radius: @b-radius;
-    background-color: @wbg-color;
-    border: @w-border;
-    border-color: @w-border-color;
-    padding: @w-padding;
-}
-
-prompt {
-    text-color: @fg-color;
-}
-
-inputbar {
-    children: ["prompt", "entry"];
-    spacing: @g-spacing;
-}
-
-entry {
-    placeholder: "Search Apps";
-    text-color: @fg-color;
-    placeholder-color: @fgp-color;
+  transparency: "real";
+  width: 30%;
+  background-color: #24273AEA;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: @sapphire;
+  padding: 12px;
 }
 
 mainbox {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
-    children: ["inputbar", "listview", "message"];
+  spacing: 10px;
+  padding: 8px;
+  margin: 0;
 }
 
 element {
-    spacing: @g-spacing;
-    margin: @g-margin;
-    padding: @g-padding;
-    border: 0px solid;
-    border-radius: @b-radius;
-    border-color: @b-color;
-    background-color: transparent;
-    text-color: @fg-color;
+  spacing: 10px;
+  margin: 0;
+  padding: 8px;
+  border: 0px solid;
+  border-radius: 8px;
+  background-color: transparent;
 }
 
 element normal.normal {
-	background-color: transparent;
-	text-color: @fg-color;
-}
-
-element alternate.normal {
-	background-color: @alt-color;
-	text-color: @fg-color;
-}
-
-element selected.active {
-	background-color: @hl-color;
-	text-color: @hlt-color;
-}
-
-element selected.normal {
-	background-color: @hl-color;
-	text-color: @hlt-color;
-}
-
-message {
-    background-color: red;
-    border: 0px solid;
+  background-color: transparent;
 }
