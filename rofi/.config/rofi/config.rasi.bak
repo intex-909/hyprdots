@@ -1,0 +1,10 @@
+@theme "catppuccin-default"
+
+configuration {
+	font: "SauceCodePro Nerd Font 13";
+}
+
+window {
+    width: 30%;
+}
+
