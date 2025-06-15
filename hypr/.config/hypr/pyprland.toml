@@ -10,7 +10,7 @@ position = "25% 44px"
 # size = "75% 60%"
 size = "50% 50%"
 margin = 44
-unfocus = "hide"
+# unfocus = "hide"
 
 [scratchpads.drop-term]
 animation = "fromBottom"
@@ -19,7 +19,7 @@ class = "kitty-dropterm"
 lazy = true
 position = "25% 48%"
 size = "50% 50%"
-unfocus = "hide"
+# unfocus = "hide"
 
 [scratchpads.volume]
 animation = "fromRight"
