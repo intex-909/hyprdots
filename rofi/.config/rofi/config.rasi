@@ -5,6 +5,12 @@ configuration {
 	font: "Noto Sans 13";
   show-icons: true;
   display-drun: " ";
+
+  window {  
+    close-on-delete: false;
+    // hide-active-window: true;
+  }
+
 }
 
 listview {
