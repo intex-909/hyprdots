@@ -39,7 +39,8 @@
   },
   "upower": {
     "native-path": "hidpp_battery_0",
-    "format": "󰍽 {percentage}",
+    "format": "󰍽",
+    "format-alt": "󰍽 {percentage}",
     "hide-if-empty": true,
     "tooltip": true,
     "show-icon": false
