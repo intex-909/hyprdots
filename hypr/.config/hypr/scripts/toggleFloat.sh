@@ -8,7 +8,7 @@ function toggle() {
 	height=$2
 
 	# hyprctl --batch "dispatch togglefloating; dispatch resizeactive exact ${width} ${height}; dispatch centerwindow; dispatch moveactive 0 16"
-	hyprctl --batch "dispatch togglefloating; dispatch resizeactive exact 1560 1378; dispatch moveactive exact 486 46"
+	hyprctl --batch "dispatch togglefloating; dispatch resizeactive exact 1560 1352; dispatch moveactive exact 486 66"
 }
 
 function untoggle() {
