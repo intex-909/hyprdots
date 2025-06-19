@@ -115,7 +115,7 @@
   },
   "custom/power": {
     "tooltip": false,
-    "on-click": "wlogout -p layer-shell &",
+    "on-click": "~/.config/hypr/scripts/wlogout.sh",
     "format": "⏻",
   },
   "custom/notification": {
