@@ -1,0 +1,106 @@
+/*
+          _                         _
+__      _| | ___   __ _  ___  _   _| |_
+\ \ /\ / / |/ _ \ / _` |/ _ \| | | | __|
+ \ V  V /| | (_) | (_| | (_) | |_| | |_
+  \_/\_/ |_|\___/ \__, |\___/ \__,_|\__|
+                  |___/
+
+by Stephan Raabe (2023)
+-----------------------------------------------------
+*/
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+@import "macchiato.css";
+
+* {
+  font-family: "Noto Sans", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+  background-image: none;
+  transition: 20ms;
+  box-shadow: none;
+}
+
+window {
+  color: @text;
+  background: url("../../wallpapers/blurred/blurred_wallpaper.png");
+  background-size: cover;
+  font-size: 16pt;
+}
+
+button {
+  color: @text;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  background-color: rgba(200, 220, 255, 0);
+  border-radius: 80px;
+  border: 1px solid transparent;
+  transition:
+    all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+button:focus {
+  background-size: 22%;
+  border: 1px solid @overlay2;
+}
+
+button:hover {
+  color: @text;
+  background-color: rgba(183, 189, 248, 0.1);
+  background-size: 30%;
+  border: 1px solid @overlay2;
+  margin: 30px;
+  border-radius: 80px;
+  box-shadow: 0 0 50px @crust;
+}
+
+/* Adjust the size of the icon or content inside the button */
+button span {
+  font-size: 1.2em; /* Increase the font size */
+}
+
+/*
+-----------------------------------------------------
+Buttons
+-----------------------------------------------------
+*/
+
+#lock {
+  margin: 10px;
+  border-radius: 20px;
+  background-image: image(url("icons/lock.png"));
+}
+
+#logout {
+  margin: 10px;
+  border-radius: 20px;
+  background-image: image(url("icons/logout.png"));
+}
+
+#suspend {
+  margin: 10px;
+  border-radius: 20px;
+  background-image: image(url("icons/suspend.png"));
+}
+
+#hibernate {
+  margin: 10px;
+  border-radius: 20px;
+  background-image: image(url("icons/hibernate.png"));
+}
+
+#shutdown {
+  margin: 10px;
+  border-radius: 20px;
+  background-image: image(url("icons/shutdown.png"));
+}
+
+#reboot {
+  margin: 10px;
+  border-radius: 20px;
+  background-image: image(url("icons/reboot.png"));
+}
