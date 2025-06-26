@@ -112,29 +112,6 @@ if [ ! -d $download_folder ]; then
     echo ":: $download_folder folder created"
 fi
 
-# Remove existing download folder and zip files
-if [ -f $download_folder/dotfiles-main.zip ]; then
-    rm $download_folder/dotfiles-main.zip
-fi
-if [ -f $download_folder/dotfiles-dev.zip ]; then
-    rm $download_folder/dotfiles-dev.zip
-fi
-if [ -f $download_folder/dotfiles.zip ]; then
-    rm $download_folder/dotfiles.zip
-fi
-if [ -d $download_folder/dotfiles ]; then
-    rm -rf $download_folder/dotfiles
-fi
-if [ -d $download_folder/dotfiles_temp ]; then
-    rm -rf $download_folder/dotfiles_temp
-fi
-if [ -d $download_folder/dotfiles-main ]; then
-    rm -rf $download_folder/dotfiles-main
-fi
-if [ -d $download_folder/dotfiles-dev ]; then
-    rm -rf $download_folder/dotfiles-dev
-fi
-
 # Synchronizing package databases
 sudo pacman -Sy
 echo
