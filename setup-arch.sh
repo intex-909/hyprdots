@@ -133,4 +133,4 @@ echo
 gum spin --spinner dot --title "Starting setup now..." -- sleep 3
 
 # Start setup
-ml4w-hyprland-setup -p arch
+hyprland-setup.sh
