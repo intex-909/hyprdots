@@ -8,8 +8,12 @@ _writeHeader "Packages"
 source $packages_directory/$install_platform/hyprland.sh
 _installPackages "${packages[@]}"
 
-# profile
-source $packages_directory/$install_platform/default.sh
+# Base
+source $packages_directory/$install_platform/base.sh
+_installPackages "${packages[@]}"
+
+# Terminal tools
+source $packages_directory/$install_platform/terminal-tools.sh
 _installPackages "${packages[@]}"
 
 # additional

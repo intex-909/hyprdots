@@ -8,4 +8,6 @@ packages=(
   "mpv"
   "imv"
   "ffmpegthumbnailer"
+  "obsidian"
+  "pinta"
 )
