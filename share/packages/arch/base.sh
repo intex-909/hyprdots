@@ -28,7 +28,7 @@ packages=(
     "breeze"
     "flatpak"
     "otf-font-awesome"
-    "noto-fonts-cjk"
+    "noto-fonts"
     "noto-fonts-emoji"
     "ttf-firacode-nerd"
     "ttf-jetbrains-mono-nerd"
