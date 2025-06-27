@@ -3,7 +3,7 @@ packages=(
   "nautilus"
   "gnome-text-editor"
   "gnome-calculator"
-  "gnome-fonts-viewer"
+  "gnome-font-viewer"
   "loupe"
   "mpv"
   "imv"
