@@ -8,7 +8,6 @@ commands=(
     "hyprpaper"
     "hyprlock"
     "hypridle"
-    "hyprshade"
     "wlogout"
     "magick"
     "waypaper"

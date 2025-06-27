@@ -60,44 +60,64 @@ _installPackage() {
         _writeLogTerminal 0 "$1 is already installed."
     else
 
-        if [ -f "$packages_directory/$install_platform/special/$1" ]; then
+        _writeLogTerminal 0 "Installing $1..."
 
-            _writeLogTerminal 0 "Installing $1 with custom script..."
+        # Run installation with platform command
+        case $install_platform in
+            arch)
+                sudo pacman --noconfirm -S "$1" &>>$(_getLogFile)
+                ;;
+            fedora)
+                sudo dnf install --assumeyes "$1" &>>$(_getLogFile)
+                ;;
+            *)
+                _writeLogTerminal 2 "Selected platform $install_platform is not supported"
+                exit
+                ;;
+        esac
 
-            # Source custom installation script for package
-            source $packages_directory/$install_platform/special/$1
+        # Check that installation was successful
+        if [[ $(_isInstalled "$1") == 0 ]]; then
+            _writeLogTerminal 1 "$1 installed successfully."
         else
-
-            # Check if installation script exist and not empty
-            _writeLogTerminal 0 "Installing $1..."
-
-            # Run installation with platform command
-            case $install_platform in
-                arch)
-                    sudo pacman --noconfirm -S "$1" &>>$(_getLogFile)
-                    ;;
-                fedora)
-                    sudo dnf install --assumeyes "$1" &>>$(_getLogFile)
-                    ;;
-                *)
-                    _writeLogTerminal 2 "Selected platform $install_platform is not supported"
-                    exit
-                    ;;
-            esac
-
-            # Check that installation was successful
-            if [[ $(_isInstalled "$1") == 0 ]]; then
-                _writeLogTerminal 1 "$1 installed successfully."
-            else
-                _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
-            fi
+            _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
         fi
     fi
 }
 
+# ------------------------------------------------------
+# Function Install all aur package if not installed
+# ------------------------------------------------------
+_installAurPackage() {
+
+    # Check if package is already installed
+    if [[ $(_isInstalled "$1") == 0 ]]; then
+
+        _writeLogTerminal 0 "$1 is already installed."
+    else
+
+        _writeLogTerminal 0 "Installing $1..."
+
+        # Run installation with aur helper
+        $aur_helper --noconfirm -S "$1" &>>$(_getLogFile)
+
+        # Check that installation was successful
+        if [[ $(_isInstalled "$1") == 0 ]]; then
+            _writeLogTerminal 1 "$1 installed successfully."
+        else
+            _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
+        fi
+    fi
+}
 _installPackages() {
     for pkg; do
         _installPackage "${pkg}"
+    done
+}
+
+_installAurPackages() {
+    for pkg; do
+        _installAurPackage "${pkg}"
     done
 }
 

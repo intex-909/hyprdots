@@ -4,7 +4,6 @@ packages=(
     "jq"
     "zoxide"
     "grim"
-    "grimblast-git"
     "slurp"
     "fd"
     "fzf"
@@ -16,4 +15,5 @@ packages=(
     "neovim"
     "htop"
     "stow"
+    "lazygit"
 )

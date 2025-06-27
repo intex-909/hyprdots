@@ -24,11 +24,6 @@ source $install_directory/packages/aur.sh
 source $install_directory/packages/packages.sh
 
 # -----------------------------------------------------
-# Fonts
-# -----------------------------------------------------
-source $install_directory/packages/fonts.sh
-
-# -----------------------------------------------------
 # Check executables of important apps
 # -----------------------------------------------------
 source $install_directory/packages/diagnosis.sh
