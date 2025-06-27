@@ -6,6 +6,6 @@ if [ $count -gt 0 ]; then
   hyprctl dispatch killactive
 else
   # dm-logout -r
-  wlogout
+  ~/.config/hypr/scripts/wlogout.sh
 fi
 
