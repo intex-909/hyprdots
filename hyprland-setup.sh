@@ -48,6 +48,7 @@ source $includes_directory/log.sh
 _run_fullinstall() {
     source $install_directory/header.sh
     source $install_directory/packages.sh
+    source $install_directory/system-conf.sh
     source $install_directory/dotfiles.sh
 }
 
