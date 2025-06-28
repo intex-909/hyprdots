@@ -46,10 +46,10 @@ fi
 echo
 
 # Add Flathub repository
+flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+
 if gum confirm "Do you want to install flatpaks?"; then
     _writeHeader "Installing flatpaks"
-
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
     # Install flatpaks
     flatpak install --user flathub com.github.tchx84.Flatseal
