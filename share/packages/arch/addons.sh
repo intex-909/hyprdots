@@ -4,6 +4,7 @@ packages=(
   "gnome-text-editor"
   "gnome-calculator"
   "gnome-font-viewer"
+  "gnome-disk-utility"
   "loupe"
   "mpv"
   "imv"
