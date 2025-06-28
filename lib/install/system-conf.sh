@@ -11,4 +11,4 @@ if gum confirm "Do you want to enable password feedback in terminal?"; then
 
     echo "Defaults pwfeedback" | sudo tee -a /etc/sudoers
 fi
-
+clear

@@ -1,6 +1,7 @@
 # ------------------------------------------------------
 # Install packages
 # ------------------------------------------------------
+clear
 _writeLogHeader "Packages"
 _writeHeader "Packages"
 
@@ -8,25 +9,25 @@ _writeHeader "Packages"
 _writeHeader "Base"
 source $packages_directory/$install_platform/base.sh
 _installPackages "${packages[@]}"
-echo
+clear
 
 # Terminal tools
 _writeHeader "Terminal tools"
 source $packages_directory/$install_platform/terminal-tools.sh
 _installPackages "${packages[@]}"
-echo
+clear
 
 # Additional
 _writeHeader "Additional"
 source $packages_directory/$install_platform/addons.sh
 _installPackages "${packages[@]}"
-echo
+clear
 
 # Install AUR packages
 _writeHeader "AUR packages"
 source $packages_directory/$install_platform/aur-packs.sh
 _installAurPackages "${packages[@]}"
-echo
+clear
 
 # Install Hyprland
 if gum confirm "Do you want to install Hyprland packages?"; then
@@ -34,6 +35,7 @@ if gum confirm "Do you want to install Hyprland packages?"; then
     
     source $packages_directory/$install_platform/hyprland.sh
     _installPackages "${packages[@]}"
+    clear
 fi
 echo
 
@@ -42,6 +44,7 @@ if gum confirm "Do you want to install fnm (Fast Node Manager)?"; then
     _writeHeader "Fast Node Manager"
 
     curl -fsSL https://fnm.vercel.app/install | bash
+    clear
 fi
 echo
 
@@ -56,5 +59,7 @@ if gum confirm "Do you want to install flatpaks?"; then
     flatpak install -y --user flathub io.github.flattool.Warehouse
     flatpak install -y --user flathub org.gnome.World.PikaBackup
     flatpak install -y --user flathub com.spotify.Client
+    clear
 fi
-echo
+clear
+
