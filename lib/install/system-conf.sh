@@ -9,6 +9,6 @@ _writeHeader "System configuration"
 if gum confirm "Do you want to enable password feedback in terminal?"; then
     _writeLogTerminal 0 "Enable password feedback..."
 
-    sudo echo "Defaults pwfeedback" >> /etc/sudoers
+    echo "Defaults pwfeedback" | sudo tee -a /etc/sudoers
 fi
 
