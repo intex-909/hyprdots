@@ -13,5 +13,5 @@ echo "Platform: $install_platform"
 echo
 
 # echo ":: You're running the script in $(pwd)"
-_writeLog 0 "Initial installation of Hyprland Dotfiles started."
+_writeLog 0 "Initial installation started."
 _writeMessage "This script will guide you through the installation process."
