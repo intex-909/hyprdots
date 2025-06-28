@@ -50,6 +50,7 @@ echo
 
 # Add Flathub repository
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+clear
 
 _writeHeader "Flatpaks"
 if gum confirm "Do you want to install flatpaks?"; then

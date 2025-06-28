@@ -9,4 +9,4 @@ source $packages_directory/$install_platform/installer.sh
 # Install required packages
 _writeMessage "Checking required packages for the installer..."
 _installPackages "${packages[@]}"
-clear
+echo
