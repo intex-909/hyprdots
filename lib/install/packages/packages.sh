@@ -52,9 +52,9 @@ if gum confirm "Do you want to install flatpaks?"; then
     _writeHeader "Flatpaks"
 
     # Install flatpaks
-    flatpak install --user flathub com.github.tchx84.Flatseal
-    flatpak install --user flathub io.github.flattool.Warehouse
-    flatpak install --user flathub org.gnome.World.PikaBackup
-    flatpak install --user flathub com.spotify.Client
+    flatpak install -y --user flathub com.github.tchx84.Flatseal
+    flatpak install -y --user flathub io.github.flattool.Warehouse
+    flatpak install -y --user flathub org.gnome.World.PikaBackup
+    flatpak install -y --user flathub com.spotify.Client
 fi
 echo
