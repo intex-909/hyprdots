@@ -1,3 +1,4 @@
+# Terminal tools
 packages=(
     "fastfetch"
     "eza"
