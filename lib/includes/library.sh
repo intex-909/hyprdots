@@ -51,7 +51,7 @@ _isInstalled() {
 
 _isInstalledFlatpak() {
   appid="$1"
-  flatpak info "$appid"
+  flatpak info "$appid" >/dev/null 2>&1
   echo $?
 }
 
@@ -92,16 +92,24 @@ _installPackage() {
 }
 
 _installFlatpak() {
-    _writeLogTerminal 0 "Installing $1..."
 
-    # Run flatpak installation
-    flatpak install -y --user flathub "$1" &>>$(_getLogFile)
-
-    # Check that installation was successful
+    # Check if package is already installed
     if [[ $(_isInstalledFlatpak "$1") == 0 ]]; then
-        _writeLogTerminal 1 "$1 installed successfully."
+
+        _writeLogTerminal 0 "$1 is already installed."
     else
-        _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
+
+        _writeLogTerminal 0 "Installing $1..."
+
+        # Run flatpak installation
+        flatpak install -y --user flathub "$1" &>>$(_getLogFile)
+
+        # Check that installation was successful
+        if [[ $(_isInstalledFlatpak "$1") == 0 ]]; then
+            _writeLogTerminal 1 "$1 installed successfully."
+        else
+            _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
+        fi
     fi
 }
 
