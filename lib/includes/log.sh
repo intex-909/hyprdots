@@ -54,7 +54,11 @@ _writeLogTerminal() {
     elif [ $1 = "2" ]; then
         echo ":: $(_getLogCategory 2) - $text"
     else
+      if [ "$3" == "1" ]; then
+        gum spin --title "$text"
+      else
         echo ":: $text"
+      fi
     fi
 }
 

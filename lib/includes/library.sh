@@ -66,7 +66,7 @@ _installPackage() {
         _writeLogTerminal 0 "$1 is already installed."
     else
 
-        _writeLogTerminal 0 "Installing $1..."
+        _writeLogTerminal 0 "Installing $1..." 1
 
         # Run installation with platform command
         case $install_platform in
@@ -99,7 +99,7 @@ _installFlatpak() {
         _writeLogTerminal 0 "$1 is already installed."
     else
 
-        _writeLogTerminal 0 "Installing $1..."
+        _writeLogTerminal 0 "Installing $1..." 1
 
         # Run flatpak installation
         flatpak install -y --user flathub "$1" &>>$(_getLogFile)
@@ -124,7 +124,7 @@ _installAurPackage() {
         _writeLogTerminal 0 "$1 is already installed."
     else
 
-        _writeLogTerminal 0 "Installing $1..."
+        _writeLogTerminal 0 "Installing $1..." 1
 
         # Run installation with aur helper
         $aur_helper --noconfirm -S "$1" &>>$(_getLogFile)
