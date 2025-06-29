@@ -130,7 +130,7 @@ fi
 echo
 
 # Start Spinner
-gum spin --spinner dot --title "Starting setup now..." -- sleep 3
+gum spin --spinner points --title "Starting setup now..." -- sleep 3
 
 # Start setup
 ./hyprland-setup.sh
