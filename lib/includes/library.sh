@@ -49,6 +49,12 @@ _isInstalled() {
     esac
 }
 
+_isInstalledFlatpak() {
+  appid="$1"
+  flatpak info "$appid"
+  echo $?
+}
+
 # ------------------------------------------------------
 # Function Install all package if not installed
 # ------------------------------------------------------
@@ -82,6 +88,20 @@ _installPackage() {
         else
             _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
         fi
+    fi
+}
+
+_installFlatpak() {
+    _writeLogTerminal 0 "Installing $1..."
+
+    # Run flatpak installation
+    flatpak install -y --user flathub "$1" &>>$(_getLogFile)
+
+    # Check that installation was successful
+    if [[ $(_isInstalledFlatpak "$1") == 0 ]]; then
+        _writeLogTerminal 1 "$1 installed successfully."
+    else
+        _writeLogTerminal 2 "$1 installation failed. Please install $1 manually."
     fi
 }
 
@@ -119,6 +139,12 @@ _installAurPackages() {
     for pkg; do
         _installAurPackage "${pkg}"
     done
+}
+
+_installFlatpaks() {
+  for pkg; do
+    _installFlatpak "${pkg}"
+  done
 }
 
 _removePackage() {

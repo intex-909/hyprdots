@@ -48,18 +48,16 @@ if gum confirm "Do you want to install fnm (Fast Node Manager)?"; then
 fi
 echo
 
+# Install flatpaks
 _writeHeader "Flatpaks"
 if gum confirm "Do you want to install flatpaks?"; then
     _writeMessage "Add flathub repository"  
 
     # Add Flathub repository
-    flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo &>>$(_getLogFile)
 
-    # Install flatpaks
-    flatpak install -y --user flathub com.github.tchx84.Flatseal
-    flatpak install -y --user flathub io.github.flattool.Warehouse
-    flatpak install -y --user flathub org.gnome.World.PikaBackup
-    flatpak install -y --user flathub com.spotify.Client
+    source $packages_directory/$install_platform/flatpaks.sh
+    _installFlatpaks "${packages[@]}"
 fi
 clear
 
