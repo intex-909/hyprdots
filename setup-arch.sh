@@ -1,16 +1,6 @@
 #!/bin/bash
 clear
 
-# -----------------------------------------------------
-# Download Folder
-# -----------------------------------------------------
-download_folder="/tmp/dotfiles_install"
-
-# Create download_folder if not exists
-if [ ! -d $download_folder ]; then
-    mkdir -p $download_folder
-fi
-
 # Check if package is installed
 _isInstalled() {
     package="$1"
@@ -21,16 +11,6 @@ _isInstalled() {
     fi
     echo 1 #'1' means 'false' in Bash
     return #false
-}
-
-# Check if command exists
-_checkCommandExists() {
-    package="$1"
-    if ! command -v $package >/dev/null; then
-        return 1
-    else
-        return 0
-    fi
 }
 
 # Install required packages
@@ -49,18 +29,6 @@ _installPackages() {
     fi
     printf "Package not installed:\n%s\n" "${toInstall[@]}"
     sudo pacman --noconfirm -S "${toInstall[@]}"
-}
-
-# install yay if needed
-_installYay() {
-    _installPackages "base-devel"
-    SCRIPT=$(realpath "$0")
-    temp_path=$(dirname "$SCRIPT")
-    git clone https://aur.archlinux.org/yay.git $download_folder/yay
-    cd $download_folder/yay
-    makepkg -si
-    cd $temp_path
-    echo ":: yay has been installed successfully."
 }
 
 # Required packages for the installer
@@ -85,10 +53,10 @@ cat <<"EOF"
 /___/_//_/___/\__/\_,_/_/_/\__/_/
 
 EOF
-echo "Dotfiles for Hyprland"
 echo -e "${NONE}"
 while true; do
-    read -p "DO YOU WANT TO START THE INSTALLATION NOW? (y/n): " yn
+    read -p "Start installation? [Y/n]: " yn
+    yn=${yn:-y}
     case $yn in
         [Yy]*)
             echo ":: Installation started."
@@ -96,21 +64,15 @@ while true; do
             break
             ;;
         [Nn]*)
-            echo ":: Installation canceled"
+            echo ":: Installation canceled."
             exit
             break
             ;;
         *)
-            echo ":: Please answer yes or no."
+            echo ":: Please enter y or n."
             ;;
     esac
 done
-
-# Create Download folder if not exists
-if [ ! -d $download_folder ]; then
-    mkdir -p $download_folder
-    echo ":: $download_folder folder created"
-fi
 
 # Synchronizing package databases
 sudo pacman -Sy
@@ -119,15 +81,6 @@ echo
 # Install required packages
 echo ":: Checking that required packages are installed..."
 _installPackages "${packages[@]}"
-
-# Install yay if needed
-if _checkCommandExists "yay"; then
-    echo ":: yay is already installed"
-else
-    echo ":: The installer requires yay. yay will be installed now"
-    _installYay
-fi
-echo
 
 # Start Spinner
 gum spin --spinner points --title "Starting setup now..." -- sleep 3

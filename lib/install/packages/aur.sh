@@ -1,5 +1,5 @@
 # ------------------------------------------------------
-# Check if yay is installed
+# Check if aur helper is installed
 # ------------------------------------------------------
 
 if [ $install_platform = "arch" ]; then

@@ -4,6 +4,14 @@
 # -----------------------------------------------------
 dir=$(dirname "$(realpath $0)")
 
+# Download Folder
+download_folder="/tmp/install-tmp"
+
+# Create download_folder if not exists
+if [ ! -d $download_folder ]; then
+    mkdir -p $download_folder
+fi
+
 # Filesystem
 base_directory="$(pwd)"
 bin_directory="$base_directory/bin"

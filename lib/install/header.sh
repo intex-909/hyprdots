@@ -6,7 +6,7 @@ _writeLog 0 "Installation started"
 
 clear
 echo -e "${GREEN}"
-echo "Hyprland installation"
+echo "Installation"
 echo -e "${NONE}"
 
 echo "Platform: $install_platform"
