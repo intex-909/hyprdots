@@ -3,7 +3,6 @@
 # ------------------------------------------------------
 clear
 _writeLogHeader "Packages"
-_writeHeader "Packages"
 
 # Base
 _writeHeader "Base"
@@ -41,10 +40,12 @@ fi
 echo
 
 # Install fnm (Fast Node Manager)
-_writeHeader "Fast Node Manager"
-if gum confirm "Do you want to install fnm (Fast Node Manager)?"; then
-    curl -fsSL https://fnm.vercel.app/install | bash
-    clear
+if [ ! -x "$(command -v fnm)"]; then
+    _writeHeader "Fast Node Manager"
+    if gum confirm "Do you want to install fnm (Fast Node Manager)?"; then
+        curl -fsSL https://fnm.vercel.app/install | bash
+        clear
+    fi
 fi
 echo
 
